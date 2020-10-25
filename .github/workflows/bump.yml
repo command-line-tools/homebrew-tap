@@ -1,0 +1,22 @@
+name: brew bump-formula-pr
+on:
+    push:
+    schedule:
+        - cron:  '0 */6 * * *'
+
+jobs:
+  bump-formula-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Set up git
+        uses: Homebrew/actions/git-user-config@master
+
+      - name: Bump Formula PR
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        with:
+          token: ${{ github.token }}
+        run: sh ./bump.sh
