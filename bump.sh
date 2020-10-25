@@ -2,4 +2,4 @@
 VERSION=`curl --silent "https://api.github.com/repos/codesenberg/bombardier/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")' | cut -c 2-`
 URL=`echo https://github.com/codesenberg/bombardier/releases/download/v${VERSION}/bombardier-linux-amd64`
 
-brew bump-formula-pr --no-browse --no-fork --url ${URL} --version ${VERSION} bombardier
+brew bump-formula-pr --url ${URL} --version ${VERSION} bombardier
