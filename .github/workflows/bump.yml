@@ -30,4 +30,4 @@ jobs:
       - name: Bump Formula PR
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
-        run: sh ./bump.sh
+        run: git remote set-url origin https://command-line-tools:${{ github.token }}@github.com/command-line-tools/homebrew-tap.git && sh ./bump.sh
