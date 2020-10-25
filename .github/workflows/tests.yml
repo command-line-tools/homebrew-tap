@@ -10,7 +10,7 @@ jobs:
         os: [ubuntu-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Run auto pr
+      - name: Git config
         run: git config --global url."git@github.com:".insteadOf https://github.com/
   
       - name: Set up Homebrew
