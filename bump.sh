@@ -4,3 +4,5 @@ URL=`echo https://github.com/codesenberg/bombardier/releases/download/v${VERSION
 
 ! brew livecheck --tap=command-line-tools/tap -q --newer-only bombardier | grep -q "No newer upstream versions." && \
     brew bump-formula-pr --no-browse --no-fork --commit --write --force --url ${URL} --version ${VERSION} bombardier
+
+exit 0
